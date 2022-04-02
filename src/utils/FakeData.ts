@@ -1,5 +1,5 @@
-import { CreateUserService } from '../services/CreateUserService';
 import { v4 as uuid } from 'uuid';
+import { CreateUserService } from '../services/CreateUserService';
 
 class FakeData{
     createUserService = new CreateUserService();
@@ -7,26 +7,21 @@ class FakeData{
     async execute(){
         await this.createUserService.execute({
             id: uuid(),
-            nome: 'Algum usuario',
-            email: 'algumusuario@gmail.com',
-        })
-
-        await this.createUserService.execute({
-            id: uuid(),
-            nome: 'Outro usuario',
-            email: '',
+            nome: 'Cleiton Correa',
+            email: 'cleitoncorreadeveloper@gmail.com',
         })
     }
 
     async createUser(){
         const user = await this.createUserService.execute({
             id: uuid(),
-            nome: 'Algum usuario',
-            email: 'algumusuario@gmail.com',
+            nome: 'Cleiton Correa',
+            email: 'cleitoncorreadeveloper@gmail.com',
         })
 
         return user
     }
 }
 
-export { FakeData }
+export { FakeData };
+
